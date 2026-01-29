@@ -1,0 +1,86 @@
+:root {
+    color-scheme: light dark;
+
+    /* ================
+    FONTS PARAMS
+    ================ */
+    --font-size-12: 0.75rem;
+    --font-size-14: 0.875rem;
+    --font-size-16: 1rem;
+    --font-size-18: 1.125rem;
+    --font-size-20: 1.25rem;
+    --font-size-22: 1.375rem;
+    --font-size-24: 1.5rem;
+
+    --font-weight-300: 300;
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+
+    /* ================
+    DISPLAY PARAMS
+    ================ */
+    --display-none: none;
+    --display-default: revert;
+
+    --visibility-hidden: hidden;
+    --visibility-visible: visible;
+
+    --opacity-transparent: 0;
+    --opacity-opaque: 1;
+
+    /* ================
+    DEFAULT COLORS
+    ================ */
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 6%);
+    --green: hsl(151, 100%, 37%);
+    --blue: hsl(207, 25%, 55%);
+    --orange: hsl(28, 59%, 59%);
+    --red: hsl(2, 78%, 55%);
+
+    /* ================
+    BACKGROUND COLORS-primary (light to dark)
+    ================ */
+    --base-color: light-dark(var(--white), var(--black));
+    --base-color-100: light-dark(hsl(0, 0%, 100%), hsl(0, 0%, 0%));
+    --base-color-200: light-dark(hsl(204, 22%, 95%), hsl(202, 9%, 15%));
+    --base-color-300: light-dark(hsl(0, 0%, 72%), hsl(0, 0%, 28%));
+    --base-color-400: light-dark(hsl(202, 9%, 52%), hsl(202, 9%, 42%));
+    --base-color-500: light-dark(hsl(213, 10%, 30%), hsl(213, 10%, 20%));
+
+    /* ================
+    FONTS COLORS-primary (dark to light)
+    ================ */
+    --contrast-color: light-dark(var(--black), var(--white));
+    --contrast-color-100: light-dark(hsl(0, 0%, 10%), hsl(0, 0%, 100%));
+    --contrast-color-200: light-dark(hsl(202, 9%, 52%), hsl(204, 22%, 95%));
+    --contrast-color-300: light-dark(hsl(213, 10%, 49%), hsl(0, 0%, 72%));
+    --contrast-color-400: light-dark(hsl(0, 0%, 72%), hsl(202, 9%, 52%));
+    --contrast-color-500: light-dark(hsl(0, 0%, 100%), hsl(0, 0%, 10%));
+
+
+    /* ================
+    ADDITIONAL COLORS (light to dark - 200 is standard color)
+    ================ */
+    --green-color-100: hsl(150, 100%, 27%);
+    --green-color-200: hsl(150, 100%, 37%);
+    --green-color-300: hsl(150, 100%, 40%);
+
+    --blue-color-100: hsl(196, 53%, 33%);
+    --blue-color-200: hsl(196, 53%, 53%);
+    --blue-color-300: hsl(196, 53%, 66%);
+
+    --purple-color-100: hsl(239, 37%, 38%);
+    --purple-color-200: hsl(239, 37%, 58%);
+    --purple-color-300: hsl(239, 37%, 68%);
+
+    --orange-color-100: hsl(27, 52%, 47%);
+    --orange-color-200: hsl(27, 52%, 57%);
+    --orange-color-300: hsl(27, 52%, 60%);
+
+    --red-color-100: hsl(2, 78%, 45%);
+    --red-color-200: hsl(2, 78%, 55%);
+    --red-color-300: hsl(2, 78%, 65%);
+}

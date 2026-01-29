@@ -1,0 +1,31 @@
+@layer component {
+    .popover {
+        position: absolute;
+        inset: .5rem;
+        container-type: normal;
+        block-size: fit-content;
+        inline-size: fit-content;
+        transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+        transition-behavior: allow-discrete;
+        transition-property: display, opacity;
+
+        &::backdrop {
+            background-color: color-mix(in hsl, var(--black) 60%, transparent);
+            backdrop-filter: blur(24px);
+        }
+
+        &:popover-open {
+            opacity: 1;
+        }
+        &:not(:popover-open) {
+            opacity: 0;
+        }
+    }
+
+
+    @starting-style {
+        .popover:popover-open {
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@layer component {
+    .modal {
+        margin: auto;
+        max-inline-size: fit-content;
+        max-block-size: fit-content;
+        container-type: normal;
+        transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+        transition-behavior: allow-discrete;
+        transition-property: display, opacity, scale, translate;
+
+        &::backdrop {
+            background-color: color-mix(in hsl, var(--black) 60%, transparent);
+            backdrop-filter: blur(24px);
+        }
+
+        &:modal {
+            scale: 1;
+            translate: 0 0;
+            opacity: 1;
+        }
+
+        &:not(:modal) {
+            position: fixed;
+            inset: 0;
+            opacity: 0;
+            translate: 0 16px;
+            scale: .9;
+        }
+
+        &:focus-within {
+            outline: none
+        }
+    }
+
+
+    @starting-style {
+        dialog.modal:modal {
+            opacity: 0;
+            translate: 0 16px;
+            scale: .9;
+        }
+    }
+}

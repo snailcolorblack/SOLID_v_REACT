@@ -1,0 +1,29 @@
+@layer reset, base, global, components, main;
+
+@import './_styles/variables.css';
+@import './_styles/reset.css';
+@import './_styles/base.css';
+@import './_styles/global.css';
+
+#root {
+    position: relative;
+    min-block-size: 100svh;
+    block-size: 100%;
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    isolation: isolate;
+    overflow: clip;
+}
+
+main {
+    margin-block: 1.5rem;
+    padding-block: clamp(4rem, 5vw, 6rem);
+    flex: 1 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(5.5rem, 14vw, 112px);
+}
+

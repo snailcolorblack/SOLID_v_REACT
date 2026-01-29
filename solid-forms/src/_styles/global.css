@@ -1,0 +1,90 @@
+@layer global {
+    /* ================
+    ADDITIONAL FONT STYLES (size/weight)
+    ================ */
+    .-size-12 {
+        font-size: var(--font-size-12);
+    }
+
+    .-size-14 {
+        font-size: var(--font-size-14);
+    }
+
+    .-size-16 {
+        font-size: var(--font-size-16);
+    }
+
+    .-size-18 {
+        font-size: var(--font-size-18);
+    }
+
+    .-size-20 {
+        font-size: clamp(1rem, 2vw, var(--font-size-20));
+    }
+
+    .-size-22 {
+        font-size: clamp(1.125rem, 2vw, var(--font-size-22));
+    }
+
+    .-size-24 {
+        font-size: clamp(1.125rem, 2vw, var(--font-size-24));
+    }
+
+    .-weight-300 {
+        font-weight: 300;
+    }
+
+    .-weight-400 {
+        font-weight: 400;
+    }
+
+    .-weight-500 {
+        font-weight: 500;
+    }
+
+    .-weight-600 {
+        font-weight: 600;
+    }
+
+    .-weight-700 {
+        font-weight: 600;
+    }
+
+
+    /* ================
+    ADDITIONAL COLOR STYLES
+    ================ */
+    .-color-100 {
+        color: var(--contrast-color-100);
+    }
+
+    .-color-200 {
+        color: var(--contrast-color-200);
+    }
+
+    .-color-300 {
+        color: var(--contrast-color-300);
+    }
+
+    .-color-400 {
+        color: var(--contrast-color-400);
+    }
+
+    .-color-500 {
+        color: var(--contrast-color-500);
+    }
+
+
+    /* ================
+    ADDITIONAL VISIBILITY STYLES
+    ================ */
+    .content-visible {
+        visibility: var(--visibility-visible);
+        content-visibility: var(--visibility-visible);
+    }
+
+    .content-hidden {
+        visibility: var(--visibility-hidden);
+        content-visibility: var(--visibility-hidden);
+    }
+}

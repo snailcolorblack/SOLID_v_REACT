@@ -1,0 +1,32 @@
+.container {
+  position: relative;
+  margin: 0 auto;
+  container-type: inline-size;
+  inline-size: 100%;
+  block-size: 100%;
+  padding-inline: 1rem;
+
+  .container {
+    padding-inline: 0;
+  }
+
+  &.large {
+    container-name: container-large;
+    max-inline-size: 1440px;
+  }
+
+  &.normal {
+    container-name: container-normal;
+    max-inline-size: 1064px;
+  }
+
+  &.small {
+    container-name: container-small;
+    max-inline-size: 680px;
+  }
+
+  &.tiny {
+    container-name: container-tiny;
+    max-inline-size: 480px;
+  }
+}

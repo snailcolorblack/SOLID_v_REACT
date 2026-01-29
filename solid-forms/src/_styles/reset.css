@@ -1,0 +1,65 @@
+@layer reset {
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        text-decoration: none;
+        font: inherit;
+        color: inherit;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        /*scrollbar-gutter: stable both-edges;*/
+        text-size-adjust: 100%;
+        writing-mode: horizontal-tb;
+        text-rendering: optimizeSpeed;
+        font-size: 16px;
+        overflow-anchor: auto;
+    }
+
+    body {
+        font-family: 'Inter', system-ui, sans-serif;
+        line-height: 1.5;
+        color: var(--contrast-color-100);
+        background-color: color-mix(in srgb, var(--base-color-400) 6%, transparent);
+        accent-color: var(--green-color-200);
+    }
+
+    article, aside, details, figcaption, figure, footer, header, main, menu, nav, section {
+        display: block;
+    }
+
+    img, picture, video, canvas, svg {
+        display: block;
+        max-inline-size: 100%;
+        max-block-size: 100%;
+        height: auto;
+    }
+
+    p {
+        text-wrap: balance;
+        white-space: pre-line;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.2;
+    }
+
+    ul, ol {
+        list-style: none;
+        /*padding-inline-start: 1.5rem; */
+    }
+
+    input, button, select, textarea, summary, a, details {
+        appearance: revert;
+
+        &:focus-visible, &:focus-visible{
+            outline: 1px solid var(--green-color-200);
+            outline-offset: 2px;
+        }
+    }
+}

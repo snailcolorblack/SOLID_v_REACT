@@ -1,0 +1,12 @@
+@layer component {
+    .wrapper {
+        position: relative;
+        container: wrapper / inline-size;
+        inline-size: 100%;
+        padding: clamp(1rem, 3vw, 2rem);
+        border-radius: 2rem;
+        background-color: var(--base-color-100);
+        transition: .3s cubic-bezier(0.39, 0.575, 0.565, 1);
+        transition-property: background-color, color;
+    }
+}

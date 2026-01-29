@@ -1,0 +1,47 @@
+@layer component {
+    .field {
+        position: relative;
+        inline-size: fit-content;
+        block-size: fit-content;
+        border: 1px solid color-mix(in hsl, var(--base-color-400) 24%, transparent);
+        border-radius: 1rem;
+        padding: .75rem;
+        cursor: pointer;
+        transition: border-color 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+        transition-property: color, border-color, background-color;
+
+        @media (hover: hover) {
+            &:hover label {
+                color: var(--green-color-200);
+            }
+        }
+
+        label {
+            block-size: fit-content;
+            inline-size: fit-content;
+            color: var(--contrast-color-100);
+            font-size: 1rem;
+            translate: 0 50%;
+            transition: 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+            transition-property: translate, font-size, color;
+        }
+
+        input, textarea, :where(input:not([type='hidden']), textarea):focus-within {
+            block-size: 100%;
+            inline-size: 100%;
+            outline: none;
+        }
+
+
+        &:has(:where(input:not([type='hidden']), textarea):focus-within), &:hover {
+            border-color: var(--green-color-200);
+        }
+
+        &:has(:where(input:not([type='hidden']), textarea):focus-within) label,
+        &:has(:where(input:not([type='hidden']), textarea):not(:placeholder-shown)) label,
+        &:has(:where(input:not([type='hidden']), textarea ):not([placeholder=''])) label {
+            translate: 0 0;
+            font-size: .75rem;
+        }
+    }
+}
