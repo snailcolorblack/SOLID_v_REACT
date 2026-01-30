@@ -8,4 +8,7 @@ export interface InputInterface extends FieldInterface {
     label?: string
 
     formatting?: RegExp
+
+    onChange?: (event: Event) => void
+    onInput?: (event: Event) => void
 }

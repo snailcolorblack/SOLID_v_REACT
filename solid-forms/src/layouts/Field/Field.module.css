@@ -9,6 +9,9 @@
         cursor: pointer;
         transition: border-color 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
         transition-property: color, border-color, background-color;
+        display: flex;
+        flex-direction: column;
+        min-block-size: clamp(58px, 6vw, 64px);;
 
         @media (hover: hover) {
             &:hover label {

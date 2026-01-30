@@ -1,5 +1,7 @@
 .input {
-    /*display: flex;*/
     display: grid;
-    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-template-rows: repeat(auto-fill, minmax(20px, auto));
+    justify-content: space-between;
+    block-size: 100%;
+    flex: 1 auto;
 }
