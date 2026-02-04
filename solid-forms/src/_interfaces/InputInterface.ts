@@ -5,10 +5,6 @@ export interface InputInterface extends FieldInterface {
     inputProps?: JSX.InputHTMLAttributes<HTMLInputElement>;
     labelProps?: JSX.LabelHTMLAttributes<HTMLLabelElement>;
 
-    label?: string
-
-    formatting?: RegExp
-
-    onChange?: (event: Event) => void
-    onInput?: (event: Event) => void
+    label?: string;
+    formatting?: RegExp;
 }

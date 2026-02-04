@@ -1,4 +1,4 @@
-import {createEffect, createSignal, createUniqueId, JSX, mergeProps, on, splitProps} from "solid-js";
+import {createEffect, createSignal, createUniqueId, JSX, mergeProps, splitProps} from "solid-js";
 import {Field} from "../../layouts/Field/Field";
 import {InputInterface} from "../../_interfaces/InputInterface";
 import styles from './Input.module.css'
@@ -12,60 +12,64 @@ export const Input = (props: InputInterface) => {
             },
             props
         ),
-        ["class", "error", "label", "formatting", "onChange", "onInput"]
+        ["class", "error", "label", "formatting"]
     );
-
     const inputProps = rest.inputProps;
 
     const id = inputProps.id ?? createUniqueId();
     const name = inputProps.name ?? id;
 
     const isControlled = () => inputProps.value !== undefined;
-
-    const [rawValue, setRawValue] = createSignal<string>("");
     const [visibleValue, setVisibleValue] = createSignal<string>("");
-
 
     const formatForRaw = (value: string): string => {
         if (!local.formatting) return value;
         return value.replace(local.formatting, "");
     };
 
+
     const formatForDisplay = (value: string): string => {
         // if (!local.mask) return value;
         // return maskFormatter(local.mask, value)
-
-
-        // Пока нет маски
         return value
     };
 
-    const handleInput = (e: InputEvent & { currentTarget: HTMLInputElement }) => {
+    const handleInput: JSX.EventHandler<HTMLInputElement, InputEvent> = (e) => {
         if (inputProps.readOnly || inputProps.disabled) return;
 
-        let {value, name} = e.currentTarget
-        const cleaned = formatForRaw(value);
+        const input = e.currentTarget;
+        const enteredValue = input.value;
+
+        const cleaned = formatForRaw(enteredValue);
         const display = formatForDisplay(cleaned);
-        value = cleaned
 
-
-        setRawValue(cleaned);
         setVisibleValue(display);
+        if (inputProps.onInput) {
+            const syntheticEvent = {
+                ...e,
+                currentTarget: {
+                    ...input,
+                    value: cleaned,
+                    name: name,
+                },
+                target: {
+                    ...input,
+                    value: cleaned,
+                    name: name,
+                },
+            } as typeof e;
 
-        console.log({ value, cleaned, display });
+            inputProps.onInput(syntheticEvent);
+        }
     };
-
 
     createEffect(() => {
         if (isControlled()) {
             const external = String(inputProps.value ?? "");
             const cleaned = formatForRaw(external);
-
-            setRawValue(cleaned);
             setVisibleValue(formatForDisplay(cleaned));
         }
     });
-
 
     return (
         <Field error={local.error}>
@@ -77,15 +81,13 @@ export const Input = (props: InputInterface) => {
                 )}
 
                 <input
-                    id={id}
-                    name={name}
-                    placeholder={inputProps.placeholder ?? ""}
-                    value={visibleValue()}
-                    onInput={handleInput}
                     {...inputProps}
-                    type={local.formatting ? "text" : inputProps.type ?? "text"}
+                    id={id}
+                    value={visibleValue()}
+                    placeholder={inputProps.placeholder ?? ""}
+                    onInput={handleInput}
+                    type={inputProps.type ?? (local.formatting ? "text" : inputProps.type ?? "text")}
                 />
-                <input type="hidden" name={name} value={rawValue()} readOnly />
             </div>
         </Field>
     );

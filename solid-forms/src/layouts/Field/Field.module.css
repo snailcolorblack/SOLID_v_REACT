@@ -1,7 +1,6 @@
 @layer component {
     .field {
         position: relative;
-        inline-size: fit-content;
         block-size: fit-content;
         border: 1px solid color-mix(in hsl, var(--base-color-400) 24%, transparent);
         border-radius: 1rem;
@@ -12,6 +11,7 @@
         display: flex;
         flex-direction: column;
         min-block-size: clamp(58px, 6vw, 64px);;
+        inline-size: 100%;
 
         @media (hover: hover) {
             &:hover label {
